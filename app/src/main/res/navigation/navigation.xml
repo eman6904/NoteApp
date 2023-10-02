@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/noteFace">
+
+
+    <fragment
+        android:id="@+id/displayNote2"
+        android:name="com.example.firebaseapp.myPackages.userInterface.DisplayNote"
+        android:label="DisplayNote" />
+    <fragment
+        android:id="@+id/dealingWithNote"
+        android:name="com.example.firebaseapp.myPackages.userInterface.DealingWithNote"
+        android:label="dealing_with_note"
+        tools:layout="@layout/dealing_with_note" >
+        <action
+            android:id="@+id/action_dealingWithNote_to_displayNote2"
+            app:destination="@id/displayNote2" />
+        <action
+            android:id="@+id/action_dealingWithNote_to_noteFace"
+            app:destination="@id/noteFace" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFace"
+        android:name="com.example.firebaseapp.myPackages.userInterface.NoteFace"
+        android:label="fragment_note_face"
+        tools:layout="@layout/fragment_note_face" >
+        <action
+            android:id="@+id/action_noteFace_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_noteFace_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.firebaseapp.myPackages.userInterface.SignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_dealingWithNote"
+            app:destination="@id/dealingWithNote" />
+        <action
+            android:id="@+id/action_signUp_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.example.firebaseapp.myPackages.userInterface.SignIn"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_dealingWithNote"
+            app:destination="@id/dealingWithNote" />
+    </fragment>
+</navigation>
